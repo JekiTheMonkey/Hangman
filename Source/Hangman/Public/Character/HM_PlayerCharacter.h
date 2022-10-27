@@ -17,8 +17,7 @@ public:
 	AHM_PlayerCharacter();
 
 	//~ Begin APawn Interface.
-	virtual void SetupPlayerInputComponent(
-		UInputComponent *PlayerInputComponent) override;
+	virtual void SetupPlayerInputComponent(UInputComponent *PlayerInputComponent) override;
 	//~ End APawn Interface
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category="HM|Character")

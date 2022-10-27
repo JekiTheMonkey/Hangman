@@ -29,20 +29,15 @@ AHM_PlayerCharacter::AHM_PlayerCharacter()
 	bUseControllerRotationRoll = false;
 }
 
-void AHM_PlayerCharacter::SetupPlayerInputComponent(
-	UInputComponent *PlayerInputComponent)
+void AHM_PlayerCharacter::SetupPlayerInputComponent(UInputComponent *PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	
-	PlayerInputComponent->BindAxis(
-		TEXT("MoveForward"), this, &ThisClass::OnMoveForward);
-	PlayerInputComponent->BindAxis(
-		TEXT("MoveRight"), this, &ThisClass::OnMoveRight);
+	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ThisClass::OnMoveForward);
+	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &ThisClass::OnMoveRight);
 
-	PlayerInputComponent->BindAxis(
-		TEXT("LookRight"), this, &ThisClass::OnLookRight);
-	PlayerInputComponent->BindAxis(
-		TEXT("LookUp"), this, &ThisClass::OnLookUp);
+	PlayerInputComponent->BindAxis(TEXT("LookRight"), this, &ThisClass::OnLookRight);
+	PlayerInputComponent->BindAxis(TEXT("LookUp"), this, &ThisClass::OnLookUp);
 }
 
 // Note: Can be cached since the function is called from two sources each frame
@@ -80,8 +75,7 @@ void AHM_PlayerCharacter::OnMoveForward(float Ratio)
 	if (Ratio == 0.f || !IsValid(Controller))
 		return;
 
-	const FVector Direction =
-		GetDirection(Controller->GetControlRotation(), EAxis::X);
+	const FVector Direction = GetDirection(Controller->GetControlRotation(), EAxis::X);
 
 	AddMovementInput(Direction, Ratio);
 }
@@ -91,8 +85,7 @@ void AHM_PlayerCharacter::OnMoveRight(float Ratio)
 	if (Ratio == 0.f || !IsValid(Controller))
 		return;
 
-	const FVector Direction =
-		GetDirection(Controller->GetControlRotation(), EAxis::Y);
+	const FVector Direction = GetDirection(Controller->GetControlRotation(), EAxis::Y);
 
 	AddMovementInput(Direction, Ratio);
 }

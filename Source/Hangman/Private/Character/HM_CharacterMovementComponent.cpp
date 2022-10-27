@@ -42,8 +42,7 @@ void UHM_CharacterMovementComponent::EditMaxWalkSpeed()
 
 	// Example:
 	// OrigSpeed 100, MaxSpeedOnOppositeDirectionNormilized 0.5, result 50
-	const float MaxDecel =
-		OriginalMaxWalkSpeed * MaxSpeedOnOppositeDirectionNormilized;
+	const float MaxDecel = OriginalMaxWalkSpeed * MaxSpeedOnOppositeDirectionNormilized;
 
 	// Compute final speed
 	// Example: 100 - 50 * 0.5 (if angle is 90 and the norm value is 0.5)
