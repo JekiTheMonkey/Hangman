@@ -8,7 +8,7 @@ AHM_InteractiveActor::AHM_InteractiveActor()
 	PrimaryActorTick.bStartWithTickEnabled = false;
 }
 
-bool AHM_InteractiveActor::CanBeInteractedWith(AActor*OtherActor) const
+bool AHM_InteractiveActor::CanBeInteractedWith(AActor *OtherActor) const
 {
 	return true;
 }
