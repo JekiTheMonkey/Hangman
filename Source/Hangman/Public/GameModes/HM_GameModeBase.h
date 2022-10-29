@@ -8,8 +8,8 @@
 class AHM_ButtonManager;
 class AHM_WordManager;
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDynamicMulticastDelegate);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameOverDelegate, bool, bWon);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDynamicMulticastSignature);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameOverSignature, bool, bWon);
 
 UENUM(BlueprintType)
 enum class EHM_GameState : uint8
@@ -58,13 +58,13 @@ private:
 	
 public:
 	UPROPERTY(BlueprintAssignable)
-	FGameOverDelegate GameOverDelegate;
+	FGameOverSignature GameOverDelegate;
 	
 	UPROPERTY(BlueprintAssignable)
-	FDynamicMulticastDelegate RestartDelegate;
+	FDynamicMulticastSignature RestartDelegate;
 
 	UPROPERTY(BlueprintAssignable)
-	FDynamicMulticastDelegate OnTryFailedDelegate;
+	FDynamicMulticastSignature OnTryFailedDelegate;
 
 private:
 	UPROPERTY(BlueprintReadOnly, Category="HM|Game Mode Base",
